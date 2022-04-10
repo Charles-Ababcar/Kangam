@@ -1,0 +1,89 @@
+<div class="collapse navbar-collapse hover-dropdown font-14 ml-auto" id="h6-info">
+    <ul class="navbar-nav ml-auto  align-items-center">
+
+
+        <li class="nav-item" [routerLinkActive]="['active']">
+            <a class="nav-link" routerLink="/">
+                Accueil
+            </a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['active']">
+            <a class="nav-link" routerLink="/about">
+                A propos de nous 
+            </a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['active']">
+            <a class="nav-link" routerLink="/about">
+                Contactez nous
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="btn btn-danger-gradiant font-14" 	(click)="open(content)">
+                Connexion 
+            </a>
+        </li>
+    </ul>
+
+</div>
+
+
+  
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title"
+			id="modal-basic-title">
+			Veuiller rensignez vos identifiants !!!
+		</h4>
+		<button type="button" class="close"
+				aria-label="Close" (click)=
+				"modal.dismiss('Cross click')">
+
+			<span aria-hidden="true">
+				×
+			</span>
+		</button>
+	</div>
+	 <div class="modal-body">
+		<form>
+		<!--Body-->
+    <div class="modal-body mb-1">
+      <div class="md-form form-sm mb-5">
+        <i class="fa fa-envelope prefix"></i>
+        <label data-error="wrong" data-success="right" for="email">Votre  email</label>
+        <input type="email" id="email" class="form-control form-control-sm validate">
+      </div>
+
+      <div class="md-form form-sm mb-4">
+        <i class="fa fa-lock prefix"></i>
+        <label data-error="wrong" data-success="right" for="password">Votre mot de passe</label>
+        <input type="password" id="password" class="form-control form-control-sm validate">
+     
+      </div>
+      <div class="text-center mt-2">
+        <button class="btn btn-info">Se Connecter <i class="fa fa-sign-in ml-1"></i></button>
+      </div>
+       <div class="text-center mt-2">
+      <button type="button"
+              class="btn btn-primary btn-floating mx-1" style="width: 100px;">
+        <i class="fa fa-facebook-f ml-1"></i>
+      </button>
+      </div>
+    <div class="text-center mt-2">
+      <button type="button"
+              class="btn btn-danger btn-floating mx-1" style="width: 100px;">
+        <i class="fa fa-google ml-1"></i>
+      </button>
+    </div>
+    </div>
+		</form>
+	</div> 
+	<div class="modal-footer">
+		<button type="button"
+			class="btn btn-dark"
+			(click)="modal.close('Save click')">
+			fermer
+		</button>
+	</div>
+</ng-template>
+
